@@ -19,7 +19,7 @@ const Hero = () => {
 
     useEffect(() => {
         window.addEventListener('click', (e) => {
-            if (e.target.id !== 'menu-btn') setIsMenuOpen(false)
+            if (e.target.id !== 'menu-btn' && !e.target.classList.includes('nav-list') && !e.target.classList.includes('menu-li')) setIsMenuOpen(false)
         })
         window.addEventListener('resize', () => {
             setWindowWidth(window.innerWidth)
@@ -37,10 +37,10 @@ const Hero = () => {
                             <img src={hamburgetIcon} id="menu-btn" onClick={() => setIsMenuOpen(prevMenuOpen => !prevMenuOpen)} />
                         </div>)}
                     <ul className={`nav-list ${isMenuOpen ? 'open' : ''}`}>
-                        <li>About</li>
-                        <li>Services</li>
-                        <li>Projects</li>
-                        <li>Contact</li>
+                        <li className="menu-li">About</li>
+                        <li className="menu-li">Services</li>
+                        <li className="menu-li">Projects</li>
+                        <li className="menu-li">Contact</li>
                     </ul>
                 </div>
             </nav>

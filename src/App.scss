@@ -56,7 +56,7 @@ $dark-blue: hsl(212, 27%, 19%);
         display: none;
       }
       &.open {
-        position: absolute;
+        position: fixed;
         top: 5em;
         right: 2rem;
         width: calc(100% - 6rem);

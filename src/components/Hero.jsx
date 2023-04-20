@@ -19,7 +19,7 @@ const Hero = () => {
 
     useEffect(() => {
         window.addEventListener('click', (e) => {
-            if (e.target.id !== 'menu-btn' && !e.target.classList.includes('nav-list') && !e.target.classList.includes('menu-li')) setIsMenuOpen(false)
+            if (e.target.id !== 'menu-btn' && !e.target.classList.contains('nav-list') && !e.target.classList.contains('menu-li')) setIsMenuOpen(false)
         })
         window.addEventListener('resize', () => {
             setWindowWidth(window.innerWidth)

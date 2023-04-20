@@ -18,7 +18,9 @@ const Hero = () => {
 
 
     useEffect(() => {
-
+        window.addEventListener('click', (e) => {
+            if (e.target.id !== 'menu-btn') setIsMenuOpen(false)
+        })
         window.addEventListener('resize', () => {
             setWindowWidth(window.innerWidth)
         })
@@ -32,7 +34,7 @@ const Hero = () => {
                     {windowWidth < 600 && (
                         <div className="hamburger">
                             <input className="hamburger-input" type="checkbox" value={isMenuOpen}/>
-                            <img src={hamburgetIcon} onClick={() => setIsMenuOpen(prevMenuOpen => !prevMenuOpen)} />
+                            <img src={hamburgetIcon} id="menu-btn" onClick={() => setIsMenuOpen(prevMenuOpen => !prevMenuOpen)} />
                         </div>)}
                     <ul className={`nav-list ${isMenuOpen ? 'open' : ''}`}>
                         <li>About</li>
